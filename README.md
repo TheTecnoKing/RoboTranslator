@@ -1,9 +1,13 @@
-# RoboTranslator
-Software del layer di traduzione per la comunicazione tra microcontrollori e server web. Parte del progetto PON di Robotica dell'ITIS "E. Mattei", Urbino, A.S. 2021-2022.
+<div align="center">
+
+# 🤖 RoboTranslator
+Software del layer di traduzione per la comunicazione tra microcontrollori e server web.<br>Parte del progetto di Robotica "Costruiamo un robot" [[↪]](#crediti-e-licenze).
+
+</div>
 
 ## Panoramica
 RoboTranslator è un software scritto in Python che si occupa di fare da ponte tra dei robot comandati da microcontrollori (Arduino in questo caso) e un server di gestione/comando.
-Spiegando meglio, esso scambia dati con i microcontrollori tramite una connessione seriale via Bluetooth, li elabora per renderli più manipolabili, e infine li rende disponibili tramite una API in REST oppure WebSocket.
+Spiegando meglio, esso scambia dati con i microcontrollori tramite una connessione seriale via Bluetooth, li elabora per facilitarne le interazioni, e infine li rende disponibili tramite una API in REST oppure WebSocket.
 
 ## Installazione
 > Nota: <br> L'intero progetto è stato sviluppato su un Raspberry Pi 4 con `Ubuntu 20.04.4 aarch64`, e testato anche su un Raspberry Pi 3B+ con `Debian 11 aarch64`. Di conseguenza, anche le istruzioni d'installazione sono state scritte basandosi su questi dispositivi. Se si vuole installare il software su un'altra configurazione, le procedure potrebbero essere differenti. In tal caso, una ricerca su Google o nella documentazione delle varie dipendenze non fa mai male!
@@ -52,10 +56,9 @@ WORK IN PROGRESS
 ## Crediti e licenze
 Software sviluppato da [Kristian Ceribashi](https://github.com/TheTecnoKing), 3A-AU, ITIS "E. Mattei" - Urbino, 2021-2022.<br>
 Software sviluppato per il progetto PON di robotica "Costruiamo un robot".<br>
-Licenza _GPLv3_ (per ora ignorare, grazie)
+Il progetto in sè non ha una licenza, ma, se decidi di usarlo da qualche parte, non mi dispiacerebbe essere menzionato!
 
-Progetti Open Source utilizzati per lo sviluppo del progetto:
-- [Python](https://www.python.org/), licenza [PSF](https://docs.python.org/3/license.html#psf-license) _necessario?_
+Librerie Open Source utilizzate per lo sviluppo del progetto:
 - [PyBluez](https://github.com/pybluez/pybluez), licenza [GPLv2](https://github.com/pybluez/pybluez#license)
 - [FastAPI](https://fastapi.tiangolo.com/), licenza [MIT](https://github.com/tiangolo/fastapi/blob/master/LICENSE)
 - [Uvicorn](https://github.com/encode/uvicorn), licenza [BSD 3-Clause "New" or "Revised" License](https://github.com/encode/uvicorn/blob/master/LICENSE.md)
