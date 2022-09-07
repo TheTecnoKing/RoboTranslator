@@ -1,0 +1,74 @@
+site_name: RoboTranslator
+repo_url: https://github.com/TheTecnoKing/RoboTranslator
+repo_name: TheTecnoKing/RoboTranslator
+copyright: RoboTranslator, by Kristian Ceribashi and Andrea Gennaioli
+nav:
+  - Pagina iniziale: index.md
+  - Installazione: install.md
+  - Configurazione: config.md
+  - Utilizzo: usage.md
+  - API: api.md
+  - Protocollo: protocol.md
+  - To-do: todo.md
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/lightbulb-outline
+        name: Spegni la luce
+    - scheme: slate 
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/lightbulb
+        name: Accendi la luce
+  language: it
+  icon:
+    logo: material/robot-excited-outline
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+extra:
+  alternate:
+    - name: Italiano
+      link: / 
+      lang: it
+    - name: English
+      link: /en/
+      lang: en
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/TheTecnoKing
+      name: TheTecnoKing @ GitHub
+    - icon: fontawesome/brands/github
+      link: https://github.com/AndreaGennaioli
+      name: AndreaGennaioli @ GitHub
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format

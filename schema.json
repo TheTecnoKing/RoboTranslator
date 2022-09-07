@@ -1,0 +1,81 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "RoboTranslator Config Schema",
+    "type": "object",
+    "default": {},
+    "required": [
+        "devices"
+    ],
+    "properties": {
+        "scanDevices": {
+            "type": "boolean",
+            "description": "Lets the user force a new Bluetooth device scan. Devices selected during the discover process will overwrite the ones already present.",
+            "default": true,
+            "examples": [
+                true,
+                false
+            ]
+        },
+        "devices": {
+            "type": "array",
+            "description": "Lists all devices that RoboTranslator tries to connect to. Every device is described in its own object.",
+            "default": [],
+            "items": {
+                "type": "object",
+                "default": {},
+                "required": [
+                    "name",
+                    "address",
+                    "sensors",
+                    "actuators"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the device"
+                    },
+                    "address": {
+                        "type": "string",
+                        "description": "MAC address of the device",
+                        "examples": [
+                            "00:21:09:01:33:2D"
+                        ]
+                    },
+                    "sensors": {
+                        "description": "Sensors are described here as a key-value pair: the key must be a string (name of the sensor) and the value must be an array (range of values the sensor can output)",
+                        "type": "object",
+                        "default": {}
+                    },
+                    "actuators": {
+                        "description": "Sensors are described here as a key-value pair: the key must be a string (name of the actuator) and the value must be aan array (range of values the actuator can take)",
+                        "type": "object",
+                        "default": {}
+                    }
+                }
+            }
+        },
+        "scanDuration": {
+            "type": "integer",
+            "description": "Sets the Bluetooth scan duration (in seconds).",
+            "default": 0,
+            "examples": [
+                5
+            ]
+        },
+        "dataRefresh": {
+            "type": "number",
+            "description": "Sets the data refresh interval (in seconds), a.k.a. the minimum time between data requests sent to a device.",
+            "default": 0.05
+        },
+        "configRefresh": {
+            "type": "number",
+            "description": "Sets the config refresh interval (in seconds), a.k.a. how much time the config watcher idles after every check.",
+            "default": 0.05
+        },
+        "timeout": {
+            "type": "integer",
+            "description": "Sets the maximum wait time (in seconds) after a data request has been sent to a device.",
+            "default": 3
+        }
+    }
+}
