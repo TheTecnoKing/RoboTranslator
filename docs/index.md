@@ -8,8 +8,6 @@ Software del layer di traduzione per la comunicazione tra microcontrollori e ser
 RoboTranslator è un software scritto in Python che si occupa di fare da ponte tra dei robot comandati da microcontrollori (in questo caso, degli Arduino) e un server di controllo.
 Spiegando meglio, esso scambia dati con i microcontrollori tramite una connessione seriale via Bluetooth, li elabora per facilitarne le interazioni, e infine li rende disponibili tramite una API in REST oppure WebSocket.
 
---inserisci grid con le sezioni della documentazione. vedi [qui](https://squidfunk.github.io/mkdocs-material/reference/grids/) E' SOTTO FOTTUTO PAGAMENTO ARGH--
-
 ## Crediti e licenze
 Software sviluppato da [Kristian Ceribashi](https://github.com/TheTecnoKing), 3A-AU, e da [Andrea Gennaioli](https://github.com/AndreaGennaioli), 3B-IN, ITIS "E. Mattei" - Urbino, 2021-2022.<br>
 Software sviluppato per il progetto PON di robotica "Costruiamo un robot".<br>
