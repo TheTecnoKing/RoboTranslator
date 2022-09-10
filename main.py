@@ -1,4 +1,5 @@
 import logging
+import os.path
 import concurrent.futures
 from utils.bluetooth import discover, connect
 # vedi se è per forza necessario passare la instance di confighandler alle altre funzioni, 
@@ -18,7 +19,8 @@ logging.basicConfig(format=log_format, level=logging.DEBUG, datefmt="%H:%M:%S")
 logging.info("RoboTranslator, by Kristian Ceribashi and Andrea Gennaioli")
 logging.info("https://github.com/TheTecnoKing/RoboTranslator")
 
-config = ConfigHandler("/home/tecnoking/Coding/RoboTranslator (frammenti)/translatorMain/config copy.json", "/home/tecnoking/Coding/RoboTranslator (frammenti)/translatorMain/schema.json")
+exec_path = os.path.dirname(os.path.realpath(__file__))
+config = ConfigHandler(f"{exec_path}/config.json", f"{exec_path}/schema.json")
 config.loadConfig()
 config.watchConfig()
 settings = config.settings
