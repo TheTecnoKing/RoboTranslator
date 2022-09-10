@@ -1,28 +1,27 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "title": "RoboTranslator Config Schema",
+    "description": "For more information about what every parameter does, feel free to read the docs.",
     "type": "object",
-    "default": {},
     "required": [
-        "devices"
+        "scanDevices",
+        "devices",
+        "scanDuration",
+        "dataRefresh",
+        "configRefresh",
+        "timeout"
     ],
     "properties": {
         "scanDevices": {
             "type": "boolean",
             "description": "Lets the user force a new Bluetooth device scan. Devices selected during the discover process will overwrite the ones already present.",
-            "default": true,
-            "examples": [
-                true,
-                false
-            ]
+            "default": true
         },
         "devices": {
             "type": "array",
-            "description": "Lists all devices that RoboTranslator tries to connect to. Every device is described in its own object.",
-            "default": [],
+            "description": "List of all devices that RoboTranslator tries to connect to. Every device is described in its own object.",
             "items": {
                 "type": "object",
-                "default": {},
                 "required": [
                     "name",
                     "address",
@@ -32,24 +31,73 @@
                 "properties": {
                     "name": {
                         "type": "string",
-                        "description": "Name of the device"
+                        "description": "Device name"
                     },
                     "address": {
                         "type": "string",
-                        "description": "MAC address of the device",
-                        "examples": [
-                            "00:21:09:01:33:2D"
-                        ]
+                        "description": "MAC address of the device"
                     },
                     "sensors": {
-                        "description": "Sensors are described here as a key-value pair: the key must be a string (name of the sensor) and the value must be an array (range of values the sensor can output)",
-                        "type": "object",
-                        "default": {}
+                        "type": "array",
+                        "description": "List of all sensors the device has. Every sensor is descriibed in its own object.",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "name",
+                                "id",
+                                "min",
+                                "max"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "Name of the sensor, used only as a label"
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "description": "Single character that identifies the sensor. It must match the one that has been set in the microcontroller's code."
+                                },
+                                "min": {
+                                    "type": "number",
+                                    "description": "Minimum value the sensor is able to send (inclusive)"
+                                },
+                                "max": {
+                                    "type": "number",
+                                    "description": "Maximum value the sensor is able to send (inclusive)"
+                                }
+                            }
+                        }
                     },
                     "actuators": {
-                        "description": "Sensors are described here as a key-value pair: the key must be a string (name of the actuator) and the value must be aan array (range of values the actuator can take)",
-                        "type": "object",
-                        "default": {}
+                        "type": "array",
+                        "description": "List of all actuators the device has. Every actuator is descriibed in its own object.",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "name",
+                                "id",
+                                "min",
+                                "max"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "Name of the actuator, used only as a label"
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "description": "Single character that identifies the actuator. It must match the one that has been set in the microcontroller's code."
+                                },
+                                "min": {
+                                    "type": "number",
+                                    "description": "Minimum value the actuator is able to receive (inclusive)"
+                                },
+                                "max": {
+                                    "type": "number",
+                                    "description": "Maximum value the actuator is able to receive (inclusive)"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -57,20 +105,17 @@
         "scanDuration": {
             "type": "integer",
             "description": "Sets the Bluetooth scan duration (in seconds).",
-            "default": 0,
-            "examples": [
-                5
-            ]
+            "default": 10
         },
         "dataRefresh": {
             "type": "number",
             "description": "Sets the data refresh interval (in seconds), a.k.a. the minimum time between data requests sent to a device.",
-            "default": 0.05
+            "default": 0.1
         },
         "configRefresh": {
             "type": "number",
-            "description": "Sets the config refresh interval (in seconds), a.k.a. how much time the config watcher idles after every check.",
-            "default": 0.05
+            "description": "Sets the config refresh interval (in seconds), a.k.a. the minimum time between checks done by the config watcher.",
+            "default": 1
         },
         "timeout": {
             "type": "integer",
