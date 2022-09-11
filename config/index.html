@@ -639,6 +639,13 @@
 
 <h1 id="configurazione">Configurazione</h1>
 <p>RoboTranslator può essere configurato andando a modificare il file <code>config.json</code> incluso nella repository oppure generato automaticamente al primo avvio.</p>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vanno aggiornate le spiegazioni sui parametri e la struttura d'esempio, per via del nuovo schema.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Magari si potrebbero aggiungere anche informazioni sul comportamento in caso di errori/mancanze/ecc...</li>
+</ul>
+</div>
 <h2 id="struttura-di-configjson">Struttura di <code>config.json</code></h2>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;firstTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
@@ -663,7 +670,7 @@
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<sub><em>schema forse coming soon <img alt="™" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2122.svg" title=":tm:" /></em></sub></p>
+<em>Lo schema è disponibile <a href="https://github.com/TheTecnoKing/RoboTranslator/blob/main/schema.json">qui</a>.</em></p>
 <h2 id="parametri">Parametri</h2>
 <h3 id="firsttime-bool"><code class="highlight"><span class="n">firstTime</span><span class="p">:</span> <span class="nb">bool</span></code></h3>
 <p>Indica al programma se esso è mai stato eseguito. Se è la prima volta che viene avviato, effettuerà, come prima cosa, una fase di ricerca e salvataggio dei dispositivi Bluetooth, altrimenti avvierà la comunicazione con i dispositivi già salvati nella sezione <a href="#devices-list"><code>devices</code></a>.</p>
