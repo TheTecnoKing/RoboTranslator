@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "title": "RoboTranslator Config Schema",
-    "description": "For more information about what every parameter does, feel free to read the docs.",
+    "description": "For more information about the parameters, feel free to read the docs.",
     "type": "object",
     "required": [
         "scanDevices",

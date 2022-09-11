@@ -2,6 +2,10 @@
 
 RoboTranslator può essere configurato andando a modificare il file `config.json` incluso nella repository oppure generato automaticamente al primo avvio.
 
+!!! todo
+    - [ ] Vanno aggiornate le spiegazioni sui parametri e la struttura d'esempio, per via del nuovo schema.
+    - [ ] Magari si potrebbero aggiungere anche informazioni sul comportamento in caso di errori/mancanze/ecc...
+
 ## Struttura di `config.json`
 ``` json
 {
@@ -27,7 +31,7 @@ RoboTranslator può essere configurato andando a modificare il file `config.json
   "timeout": 1
 }
 ```
-~_schema\ forse\ coming\ soon\ :tm:_~
+_Lo schema è disponibile [qui](https://github.com/TheTecnoKing/RoboTranslator/blob/main/schema.json)._
 
 ## Parametri
 ### `#!python firstTime: bool`

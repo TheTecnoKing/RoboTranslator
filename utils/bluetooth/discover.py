@@ -43,7 +43,7 @@ def discover(scanDuration, ConfigHandlerInstance: ConfigHandler = None):
             device_dict.update({"sensors": dict()})
             device_dict.update({"actuators": dict()})
             saved_devices.append(device_dict)
-        ConfigHandlerInstance.writeConfig(devices = saved_devices, firstTime = False)
+        ConfigHandlerInstance.writeConfig(devices = saved_devices, scanDevices = False)
         device_names = list()
         for device in saved_devices:
             device_names.append(device["name"])
